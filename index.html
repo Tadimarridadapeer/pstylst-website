@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P’STYLST | Personal Stylist Intelligence</title>
+    <meta name="description" content="P’STYLST is Personal Stylist Intelligence designed to help you understand your style, explore personalized looks, organize your wardrobe, and plan what to wear.">
+    <link rel="icon" href="assets/pstylst favicon.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#1a1a1a',
+                            ivory: '#FDFBF7',
+                            sand: '#F3F1EC',
+                            gray: '#737373',
+                            border: '#E5E5E5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-ivory text-brand-black font-sans antialiased selection:bg-brand-black selection:text-white overflow-x-hidden">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 transition-all duration-300 py-6 text-white" id="navbar">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12 flex justify-between items-center">
+            <div class="flex items-center gap-4 z-50">
+                <a href="#home"><img src="assets/pstylst logo white.png" alt="P'STYLST" class="h-8 md:h-10 w-auto" id="navbar-logo"></a>
+                <span class="hidden lg:block text-[10px] uppercase tracking-[0.2em] opacity-70 border-l border-white/20 pl-4" id="nav-eyebrow">Personal Stylist<br>Intelligence</span>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex space-x-10 text-xs uppercase tracking-widest font-medium items-center">
+                <a href="#home" class="hover:opacity-70 transition-colors">Home</a>
+                <a href="#about" class="hover:opacity-70 transition-colors">About</a>
+                <a href="#features" class="hover:opacity-70 transition-colors">Features</a>
+                <a href="#how-it-works" class="hover:opacity-70 transition-colors">How It Works</a>
+                <a href="#coming-soon" id="nav-cta" class="border border-white px-6 py-2.5 hover:bg-white hover:text-brand-black transition-colors duration-300 rounded-full">Coming Soon</a>
+            </div>
+
+            <!-- Mobile Nav Toggle -->
+            <div class="lg:hidden z-50">
+                <button id="mobile-menu-btn" class="focus:outline-none p-2 text-white">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-ivory z-40 hidden flex-col justify-center items-center space-y-8 px-6 text-center opacity-0 transition-opacity duration-300 text-brand-black">
+            <a href="#home" class="text-2xl font-serif hover:text-brand-gray">Home</a>
+            <a href="#about" class="text-2xl font-serif hover:text-brand-gray">About</a>
+            <a href="#features" class="text-2xl font-serif hover:text-brand-gray">Features</a>
+            <a href="#how-it-works" class="text-2xl font-serif hover:text-brand-gray">How It Works</a>
+            <a href="#coming-soon" class="text-2xl font-serif hover:text-brand-gray">Coming Soon</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-brand-black text-white">
+        <div class="absolute inset-0 z-0 opacity-40 scale-105 transform hero-img-bg">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop" alt="High-end Fashion Editorial" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-brand-black z-10"></div>
+        
+        <div class="relative z-20 text-center max-w-4xl px-6 fade-in-up mt-16">
+            <p class="text-[11px] md:text-sm font-medium uppercase tracking-[0.3em] text-gray-300 mb-6">Personal Stylist Intelligence</p>
+            <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] mb-8 font-medium tracking-tight">Your personal style, <br/><span class="font-normal">intelligently understood.</span></h1>
+            <p class="text-lg md:text-xl text-gray-300 font-light mb-12 max-w-2xl mx-auto leading-relaxed">Discover what suits you, visualize your style, and build looks around you.</p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="#coming-soon" class="bg-white text-brand-black px-10 py-4 text-xs uppercase tracking-widest font-medium hover:bg-gray-200 transition-colors w-full sm:w-auto text-center rounded-full">Coming Soon</a>
+                <a href="#about" class="text-white border-b border-transparent hover:border-white pb-1 text-xs uppercase tracking-widest font-medium transition-all w-full sm:w-auto text-center">Explore P’STYLST</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 md:py-32 px-6 md:px-12 border-t border-brand-border">
+        <!-- Intro -->
+        <div class="max-w-4xl mx-auto text-center mb-32 section-fade">
+            <h2 class="font-serif text-3xl md:text-5xl mb-8 text-brand-black">About P’STYLST</h2>
+            <p class="text-lg md:text-2xl text-gray-600 font-light leading-relaxed">
+                P’STYLST is Personal Stylist Intelligence designed to make personal styling more personalized, visual, and practical. It helps users understand their appearance, discover styling guidance, explore outfits and hairstyles, organize their wardrobe, save looks, and plan what they want to wear.
+            </p>
+        </div>
+
+        <!-- The Idea -->
+        <div class="max-w-[90rem] mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-center mb-32 section-fade">
+            <div class="relative h-[600px] overflow-hidden bg-brand-sand order-2 md:order-1">
+                <img src="assets/Style should feel personal.png" alt="Personal Style" class="absolute inset-0 w-full h-full object-cover">
+            </div>
+            <div class="order-1 md:order-2">
+                <h3 class="font-serif text-3xl md:text-5xl mb-8 leading-snug">Style should feel personal.</h3>
+                <div class="space-y-6 text-lg text-gray-600 font-light leading-relaxed">
+                    <p>Personal style is more than following trends. It is about understanding what works for you — your proportions, features, colors, preferences, wardrobe, and the way you want to express yourself.</p>
+                    <p>P’STYLST brings these elements together into one personalized styling experience, helping users move from understanding themselves to discovering and planning styles that feel right for them.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vision & Mission -->
+        <div class="max-w-[90rem] mx-auto grid md:grid-cols-2 gap-16 md:gap-24 mb-32 section-fade">
+            <div class="bg-brand-sand p-12 md:p-16">
+                <div class="text-[10px] font-medium uppercase tracking-[0.2em] text-brand-gray mb-6">Our Vision</div>
+                <h3 class="font-serif text-2xl md:text-3xl leading-snug mb-6 text-brand-black">To make personal styling intelligent, visual, and accessible — helping everyone understand what suits them and express their individuality with confidence.</h3>
+                <p class="text-gray-600 font-light leading-relaxed">We envision a future where personal styling is not limited to trends, guesswork, or generic recommendations. Instead, technology can help people understand themselves better and make more confident choices about how they look and feel.</p>
+            </div>
+            <div class="bg-brand-sand p-12 md:p-16">
+                <div class="text-[10px] font-medium uppercase tracking-[0.2em] text-brand-gray mb-6">Our Mission</div>
+                <h3 class="font-serif text-2xl md:text-3xl leading-snug mb-6 text-brand-black">To combine personal insights, styling intelligence, visual exploration, and wardrobe organization into one personalized experience that helps people discover, create, and plan styles that truly work for them.</h3>
+                <p class="text-gray-600 font-light leading-relaxed">P’STYLST brings together appearance analysis, personalized styling guidance, outfit exploration, hairstyle inspiration, digital wardrobe organization, and look planning to make the styling journey simpler, more visual, and more personal.</p>
+            </div>
+        </div>
+
+        <!-- Four Core Principles -->
+        <div class="max-w-[90rem] mx-auto section-fade">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 border-t border-brand-border pt-16">
+                <div>
+                    <h4 class="font-serif text-2xl mb-4">Understand</h4>
+                    <p class="text-gray-600 font-light leading-relaxed">Understand personal characteristics and styling context.</p>
+                </div>
+                <div>
+                    <h4 class="font-serif text-2xl mb-4">Explore</h4>
+                    <p class="text-gray-600 font-light leading-relaxed">Explore personalized outfits, hairstyles, colors, and styling possibilities.</p>
+                </div>
+                <div>
+                    <h4 class="font-serif text-2xl mb-4">Organize</h4>
+                    <p class="text-gray-600 font-light leading-relaxed">Turn existing clothing into a digital wardrobe and discover combinations.</p>
+                </div>
+                <div>
+                    <h4 class="font-serif text-2xl mb-4">Plan</h4>
+                    <p class="text-gray-600 font-light leading-relaxed">Save useful looks and plan what to wear for future occasions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSONALIZATION -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-brand-black text-white section-fade">
+        <div class="max-w-[90rem] mx-auto text-center">
+            <h2 class="font-serif text-4xl md:text-5xl mb-8">Built Around You</h2>
+            <p class="text-xl md:text-2xl text-gray-400 font-light max-w-3xl mx-auto leading-relaxed mb-20">
+                P’STYLST uses personal context to make styling guidance more relevant to the individual.
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-gray-800 pt-16">
+                <div class="text-center group">
+                    <div class="text-5xl font-serif text-gray-800 group-hover:text-white transition-colors duration-500 mb-6">01</div>
+                    <div class="text-sm uppercase tracking-widest font-medium text-gray-300">Body Shape</div>
+                </div>
+                <div class="text-center group">
+                    <div class="text-5xl font-serif text-gray-800 group-hover:text-white transition-colors duration-500 mb-6">02</div>
+                    <div class="text-sm uppercase tracking-widest font-medium text-gray-300">Face Shape</div>
+                </div>
+                <div class="text-center group">
+                    <div class="text-5xl font-serif text-gray-800 group-hover:text-white transition-colors duration-500 mb-6">03</div>
+                    <div class="text-sm uppercase tracking-widest font-medium text-gray-300">Skin Tone</div>
+                </div>
+                <div class="text-center group">
+                    <div class="text-5xl font-serif text-gray-800 group-hover:text-white transition-colors duration-500 mb-6">04</div>
+                    <div class="text-sm uppercase tracking-widest font-medium text-gray-300">Undertone</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-24 md:py-40 px-6 md:px-12 bg-brand-ivory border-b border-brand-border section-fade">
+        <div class="max-w-[90rem] mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-24 md:mb-32">
+                <h2 class="font-serif text-4xl md:text-5xl mb-6">Everything begins with understanding you.</h2>
+            </div>
+            
+            <div class="space-y-32 md:space-y-48">
+                <!-- Today's Look -->
+                <div class="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+                    <div class="order-2 md:order-1 h-[600px] overflow-hidden bg-brand-sand relative">
+                        <img src="assets/todays look.png" class="absolute inset-0 w-full h-full object-cover" alt="Today's Look">
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <div class="text-[10px] font-medium uppercase tracking-[0.2em] text-brand-gray mb-4">Core Feature</div>
+                        <h3 class="font-serif text-4xl mb-6">Today’s Look</h3>
+                        <p class="text-xl text-gray-600 font-light mb-8 leading-relaxed">Check what you're wearing right now and get personalized feedback on your outfit.</p>
+                        <p class="text-sm text-brand-gray mb-4 uppercase tracking-widest">Guidance includes:</p>
+                        <ul class="space-y-3 font-light text-brand-black">
+                            <li class="flex items-center gap-4"><span class="w-8 h-px bg-brand-black block"></span> Color coordination</li>
+                            <li class="flex items-center gap-4"><span class="w-8 h-px bg-brand-black block"></span> Fit</li>
+                            <li class="flex items-center gap-4"><span class="w-8 h-px bg-brand-black block"></span> Styling balance</li>
+                            <li class="flex items-center gap-4"><span class="w-8 h-px bg-brand-black block"></span> Accessories</li>
+                            <li class="flex items-center gap-4"><span class="w-8 h-px bg-brand-black block"></span> Overall presentation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Face Analysis -->
+                <div class="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+                    <div>
+                        <div class="text-[10px] font-medium uppercase tracking-[0.2em] text-brand-gray mb-4">Core Feature</div>
+                        <h3 class="font-serif text-4xl mb-6">Face Analysis</h3>
+                        <p class="text-xl text-gray-600 font-light mb-8 leading-relaxed">Understand your face shape and discover styling directions that complement your features.</p>
+                        <p class="text-sm text-brand-gray mb-4 uppercase tracking-widest">Guidance includes:</p>
+                        <ul class="space-y-3 font-light text-brand-black">
+                            <li class="flex items-center gap-4"><span class="w-8 h-px bg-brand-black block"></span> Face shape & Preferred colors</li>
+                            <li class="flex items-center gap-4"><span class="w-8 h-px bg-brand-black block"></span> Colors to avoid</li>
+                            <li class="flex items-center gap-4"><span class="w-8 h-px bg-brand-black block"></span> Color combinations</li>
+                            <li class="flex items-center gap-4"><span class="w-8 h-px bg-brand-black block"></span> Spectacles / frame recommendations</li>
+                        </ul>
+                    </div>
+                    <div class="h-[600px] overflow-hidden bg-brand-sand relative">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="Face Analysis">
+                    </div>
+                </div>
+
+                <!-- Style DNA -->
+                <div class="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+                    <div class="order-2 md:order-1 h-[600px] overflow-hidden bg-brand-sand relative">
+                        <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?q=80&w=1920&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover object-top" alt="Style DNA">
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <div class="text-[10px] font-medium uppercase tracking-[0.2em] text-brand-gray mb-4">Core Feature</div>
+                        <h3 class="font-serif text-4xl mb-6">Style DNA</h3>
+                        <p class="text-xl text-gray-600 font-light mb-8 leading-relaxed">A personalized style reference built around your profile.</p>
+                        <p class="text-gray-500 font-light leading-relaxed mb-6">Provides styling guidance based on body shape, face shape, skin tone, undertone, clothing categories, fits, color direction, and combinations.</p>
+                    </div>
+                </div>
+
+                <!-- Outfit Gen & Hairstyles (Grid) -->
+                <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+                    <div class="bg-white p-12 border border-brand-border">
+                        <h3 class="font-serif text-2xl mb-4">Visualize the Possibilities</h3>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">Explore how different outfits and styles can look on you. Use your image with a reference outfit to create a personalized visual result.</p>
+                    </div>
+                    <div class="bg-white p-12 border border-brand-border">
+                        <h3 class="font-serif text-2xl mb-4">Find Your Next Look</h3>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">Explore hairstyle, beard, and combined appearance possibilities based on your current look.</p>
+                    </div>
+                    <div class="bg-white p-12 border border-brand-border">
+                        <h3 class="font-serif text-2xl mb-4">From Inspiration to You</h3>
+                        <p class="text-gray-600 font-light leading-relaxed mb-6">Start with a hairstyle you like and explore how that inspiration can translate to your own appearance.</p>
+                    </div>
+                </div>
+                
+                <!-- Digital Wardrobe -->
+                <div class="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+                    <div>
+                        <div class="text-[10px] font-medium uppercase tracking-[0.2em] text-brand-gray mb-4">Core Feature</div>
+                        <h3 class="font-serif text-4xl mb-6">Your Wardrobe, Reimagined</h3>
+                        <p class="text-xl text-gray-600 font-light mb-8 leading-relaxed">Turn the clothes you already own into a digital wardrobe and discover combinations from your own collection.</p>
+                        <p class="text-sm text-brand-gray mb-4 uppercase tracking-widest">Process:</p>
+                        <ul class="space-y-3 font-light text-brand-black">
+                            <li class="flex items-center gap-4"><span class="w-8 h-px bg-brand-black block"></span> Upload clothing</li>
+                            <li class="flex items-center gap-4"><span class="w-8 h-px bg-brand-black block"></span> Review identified items</li>
+                            <li class="flex items-center gap-4"><span class="w-8 h-px bg-brand-black block"></span> Build combinations</li>
+                            <li class="flex items-center gap-4"><span class="w-8 h-px bg-brand-black block"></span> Save useful outfits</li>
+                        </ul>
+                    </div>
+                    <div class="h-[600px] overflow-hidden bg-brand-sand relative">
+                        <img src="assets/your wardrobe.png" class="absolute inset-0 w-full h-full object-cover" alt="Digital Wardrobe">
+                    </div>
+                </div>
+
+                <!-- Save & Plan -->
+                <div class="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+                    <div class="order-2 md:order-1 h-[600px] overflow-hidden bg-brand-sand relative">
+                        <img src="assets/save what works.png" class="absolute inset-0 w-full h-full object-cover object-top" alt="Save and Plan">
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <div class="text-[10px] font-medium uppercase tracking-[0.2em] text-brand-gray mb-4">Core Feature</div>
+                        <h3 class="font-serif text-4xl mb-6">Save What Works</h3>
+                        <p class="text-xl text-gray-600 font-light mb-8 leading-relaxed">Keep your favorite styling results and plan what you want to wear in the future.</p>
+                        <p class="text-gray-500 font-light leading-relaxed mb-6">Saved looks can be associated with specific dates and occasions, ensuring you are always prepared.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS (Horizontal Journey) -->
+    <section id="how-it-works" class="py-24 md:py-32 px-6 md:px-12 bg-white section-fade border-b border-brand-border overflow-hidden">
+        <div class="max-w-[90rem] mx-auto">
+            <h2 class="font-serif text-4xl md:text-5xl text-center mb-24 md:mb-32">Your style journey, simplified.</h2>
+            
+            <div class="relative">
+                <!-- Horizontal Line (Desktop) -->
+                <div class="hidden md:block absolute top-[1.75rem] left-[10%] right-[10%] h-px bg-brand-border z-0"></div>
+                <!-- Vertical Line (Mobile) -->
+                <div class="md:hidden absolute left-1/2 top-0 bottom-0 w-px bg-brand-border -translate-x-1/2 z-0"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-16 md:gap-8 relative z-10">
+                    <!-- Step 01 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-full border border-brand-border bg-white flex items-center justify-center flex-shrink-0 text-xs font-medium mb-6 z-10 group-hover:bg-brand-black group-hover:text-white transition-colors duration-300">01</div>
+                        <h3 class="text-[10px] md:text-xs font-medium uppercase tracking-widest text-brand-gray mb-3">Create Your Profile</h3>
+                        <p class="text-brand-black text-sm md:text-base font-light leading-relaxed max-w-[200px]">Build your personal profile and provide the information needed for personalized styling.</p>
+                    </div>
+                    <!-- Step 02 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-full border border-brand-border bg-white flex items-center justify-center flex-shrink-0 text-xs font-medium mb-6 z-10 group-hover:bg-brand-black group-hover:text-white transition-colors duration-300">02</div>
+                        <h3 class="text-[10px] md:text-xs font-medium uppercase tracking-widest text-brand-gray mb-3">Understand Your Style</h3>
+                        <p class="text-brand-black text-sm md:text-base font-light leading-relaxed max-w-[200px]">Explore appearance insights and Style DNA.</p>
+                    </div>
+                    <!-- Step 03 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-full border border-brand-border bg-white flex items-center justify-center flex-shrink-0 text-xs font-medium mb-6 z-10 group-hover:bg-brand-black group-hover:text-white transition-colors duration-300">03</div>
+                        <h3 class="text-[10px] md:text-xs font-medium uppercase tracking-widest text-brand-gray mb-3">Explore</h3>
+                        <p class="text-brand-black text-sm md:text-base font-light leading-relaxed max-w-[200px]">Check your current look, explore outfits, hairstyles, and styling inspirations.</p>
+                    </div>
+                    <!-- Step 04 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-full border border-brand-border bg-white flex items-center justify-center flex-shrink-0 text-xs font-medium mb-6 z-10 group-hover:bg-brand-black group-hover:text-white transition-colors duration-300">04</div>
+                        <h3 class="text-[10px] md:text-xs font-medium uppercase tracking-widest text-brand-gray mb-3">Organize</h3>
+                        <p class="text-brand-black text-sm md:text-base font-light leading-relaxed max-w-[200px]">Build your digital wardrobe and discover combinations using what you already own.</p>
+                    </div>
+                    <!-- Step 05 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 rounded-full bg-brand-black text-white flex items-center justify-center flex-shrink-0 text-xs font-medium mb-6 z-10 shadow-lg shadow-gray-200">05</div>
+                        <h3 class="text-[10px] md:text-xs font-medium uppercase tracking-widest text-brand-gray mb-3">Save & Plan</h3>
+                        <p class="text-brand-black text-sm md:text-base font-light leading-relaxed max-w-[200px]">Save useful looks and associate them with future dates or occasions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HORIZONTAL PRODUCT JOURNEY -->
+    <section class="py-20 px-6 bg-brand-sand border-b border-brand-border overflow-x-auto section-fade">
+        <div class="max-w-[90rem] mx-auto min-w-[900px]">
+            <div class="flex items-center justify-between text-center font-serif text-xl tracking-wide text-gray-600">
+                <span>PROFILE</span>
+                <span class="text-brand-border">→</span>
+                <span>UNDERSTAND</span>
+                <span class="text-brand-border">→</span>
+                <span>EXPLORE</span>
+                <span class="text-brand-border">→</span>
+                <span>ORGANIZE</span>
+                <span class="text-brand-border">→</span>
+                <span>SAVE</span>
+                <span class="text-brand-border">→</span>
+                <span class="text-brand-black font-medium">PLAN</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY P'STYLST -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-white section-fade">
+        <div class="max-w-[90rem] mx-auto text-center">
+            <h2 class="font-serif text-4xl md:text-5xl mb-24">More personal. More visual. More practical.</h2>
+            
+            <div class="grid md:grid-cols-3 gap-16 text-center">
+                <div>
+                    <h3 class="text-xs font-medium uppercase tracking-widest text-brand-black mb-6">Personal</h3>
+                    <p class="text-xl text-gray-600 font-light leading-relaxed">Styling guidance is built around the individual.</p>
+                </div>
+                <div>
+                    <h3 class="text-xs font-medium uppercase tracking-widest text-brand-black mb-6">Visual</h3>
+                    <p class="text-xl text-gray-600 font-light leading-relaxed">Explore styling possibilities through visual experiences.</p>
+                </div>
+                <div>
+                    <h3 class="text-xs font-medium uppercase tracking-widest text-brand-black mb-6">Practical</h3>
+                    <p class="text-xl text-gray-600 font-light leading-relaxed">Use your own wardrobe, save looks, and plan what to wear.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMING SOON -->
+    <section id="coming-soon" class="py-32 md:py-48 px-6 md:px-12 bg-brand-black text-white text-center section-fade relative">
+        <div class="max-w-3xl mx-auto relative z-10">
+            <h2 class="font-serif text-5xl md:text-7xl mb-8 leading-tight">Your personal stylist is coming soon.</h2>
+            <p class="text-xl md:text-2xl text-gray-400 font-light mb-16 leading-relaxed">P’STYLST is being built to make personal styling simpler, more visual, and more personal.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <button class="bg-white text-brand-black px-10 py-4 text-xs uppercase tracking-widest hover:bg-gray-200 transition-colors w-full sm:w-auto">Coming Soon</button>
+                <a href="#about" class="text-white border-b border-gray-800 hover:border-white pb-1 text-xs uppercase tracking-widest transition-all w-full sm:w-auto text-center">Explore P’STYLST</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-16 px-6 md:px-12 bg-white border-t border-brand-border">
+        <div class="max-w-[90rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-center md:text-left flex flex-col items-center md:items-start gap-4">
+                <img src="assets/pstylst logo black.png" alt="P'STYLST" class="h-6 md:h-8 w-auto">
+                <div class="text-[10px] uppercase tracking-[0.2em] text-brand-gray">Personal Stylist Intelligence</div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-8 text-[11px] uppercase tracking-widest text-brand-gray font-medium">
+                <a href="#home" class="hover:text-brand-black transition-colors">Home</a>
+                <a href="#about" class="hover:text-brand-black transition-colors">About</a>
+                <a href="#features" class="hover:text-brand-black transition-colors">Features</a>
+                <a href="#how-it-works" class="hover:text-brand-black transition-colors">How It Works</a>
+                <a href="#coming-soon" class="hover:text-brand-black transition-colors">Coming Soon</a>
+            </div>
+            
+            <div class="text-[11px] text-brand-gray text-center md:text-right tracking-widest uppercase">
+                &copy; 2026 P’STYLST. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Mobile Menu Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileBtn.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                // trigger reflow
+                void mobileMenu.offsetWidth;
+                mobileMenu.classList.add('opacity-100');
+                mobileMenu.classList.remove('opacity-0');
+            } else {
+                mobileMenu.classList.add('opacity-0');
+                mobileMenu.classList.remove('opacity-100');
+                setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+            }
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('opacity-0');
+                mobileMenu.classList.remove('opacity-100');
+                setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+            });
+        });
+    </script>
+</body>
+</html>
