@@ -81,7 +81,7 @@
         
         <div class="relative z-20 text-center max-w-4xl px-6 fade-in-up mt-16">
             <p class="text-[11px] md:text-sm font-medium uppercase tracking-[0.3em] text-gray-300 mb-6">Personal Stylist Intelligence</p>
-            <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] mb-8 font-medium tracking-tight">Your personal style, <br/><span class="font-normal">intelligently understood.</span></h1>
+            <h1 class="text-4xl md:text-6xl lg:text-[5.5rem] leading-[1.1] mb-8 font-medium tracking-tight">Your personal style, <br/><span class="font-normal">intelligently understood.</span></h1>
             <p class="text-lg md:text-xl text-gray-300 font-light mb-12 max-w-2xl mx-auto leading-relaxed">Discover what suits you, visualize your style, and build looks around you.</p>
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -103,7 +103,7 @@
 
         <!-- The Idea -->
         <div class="max-w-[90rem] mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-center mb-32 section-fade">
-            <div class="relative h-[600px] overflow-hidden bg-brand-sand order-2 md:order-1">
+            <div class="relative h-[400px] md:h-[600px] overflow-hidden bg-brand-sand order-2 md:order-1">
                 <img src="assets/Style should feel personal.png" alt="Personal Style" class="absolute inset-0 w-full h-full object-cover">
             </div>
             <div class="order-1 md:order-2">
@@ -191,7 +191,7 @@
             <div class="space-y-32 md:space-y-48">
                 <!-- Today's Look -->
                 <div class="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-                    <div class="order-2 md:order-1 h-[600px] overflow-hidden bg-brand-sand relative">
+                    <div class="order-2 md:order-1 h-[400px] md:h-[600px] overflow-hidden bg-brand-sand relative">
                         <img src="assets/todays look.png" class="absolute inset-0 w-full h-full object-cover" alt="Today's Look">
                     </div>
                     <div class="order-1 md:order-2">
@@ -223,14 +223,14 @@
                             <li class="flex items-center gap-4"><span class="w-8 h-px bg-brand-black block"></span> Spectacles / frame recommendations</li>
                         </ul>
                     </div>
-                    <div class="h-[600px] overflow-hidden bg-brand-sand relative">
+                    <div class="h-[400px] md:h-[600px] overflow-hidden bg-brand-sand relative">
                         <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="Face Analysis">
                     </div>
                 </div>
 
                 <!-- Style DNA -->
                 <div class="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-                    <div class="order-2 md:order-1 h-[600px] overflow-hidden bg-brand-sand relative">
+                    <div class="order-2 md:order-1 h-[400px] md:h-[600px] overflow-hidden bg-brand-sand relative">
                         <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?q=80&w=1920&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover object-top" alt="Style DNA">
                     </div>
                     <div class="order-1 md:order-2">
@@ -271,14 +271,14 @@
                             <li class="flex items-center gap-4"><span class="w-8 h-px bg-brand-black block"></span> Save useful outfits</li>
                         </ul>
                     </div>
-                    <div class="h-[600px] overflow-hidden bg-brand-sand relative">
+                    <div class="h-[400px] md:h-[600px] overflow-hidden bg-brand-sand relative">
                         <img src="assets/your wardrobe.png" class="absolute inset-0 w-full h-full object-cover" alt="Digital Wardrobe">
                     </div>
                 </div>
 
                 <!-- Save & Plan -->
                 <div class="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-                    <div class="order-2 md:order-1 h-[600px] overflow-hidden bg-brand-sand relative">
+                    <div class="order-2 md:order-1 h-[400px] md:h-[600px] overflow-hidden bg-brand-sand relative">
                         <img src="assets/save what works.png" class="absolute inset-0 w-full h-full object-cover object-top" alt="Save and Plan">
                     </div>
                     <div class="order-1 md:order-2">
@@ -423,6 +423,7 @@
         mobileBtn.addEventListener('click', () => {
             if (mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
                 // trigger reflow
                 void mobileMenu.offsetWidth;
                 mobileMenu.classList.add('opacity-100');
@@ -430,7 +431,10 @@
             } else {
                 mobileMenu.classList.add('opacity-0');
                 mobileMenu.classList.remove('opacity-100');
-                setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                }, 300);
             }
         });
 
@@ -438,7 +442,10 @@
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('opacity-0');
                 mobileMenu.classList.remove('opacity-100');
-                setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                }, 300);
             });
         });
     </script>
