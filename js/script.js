@@ -32,7 +32,7 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('py-6', 'text-white');
         navbar.classList.add('text-brand-black');
         
-        if (navLogo) navLogo.src = 'assets/pstylst logo black.png';
+        if (navLogo) navLogo.src = '/assets/pstylst logo black.png';
         if (navMobileBtn) navMobileBtn.classList.replace('text-white', 'text-brand-black');
         if (navEyebrow) navEyebrow.classList.replace('border-white/20', 'border-brand-border');
         if (navCta) {
@@ -43,7 +43,7 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('bg-[#FDFBF7]/95', 'backdrop-blur-md', 'border-b', 'border-[#E5E5E5]', 'shadow-sm', 'py-4', 'text-brand-black');
         navbar.classList.add('py-6', 'text-white');
         
-        if (navLogo) navLogo.src = 'assets/pstylst logo white.png';
+        if (navLogo) navLogo.src = '/assets/pstylst logo white.png';
         if (navMobileBtn) navMobileBtn.classList.replace('text-brand-black', 'text-white');
         if (navEyebrow) navEyebrow.classList.replace('border-brand-border', 'border-white/20');
         if (navCta) {
