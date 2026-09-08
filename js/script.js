@@ -28,27 +28,27 @@ const navEyebrow = document.getElementById('nav-eyebrow');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        navbar.classList.add('bg-[#FDFBF7]/95', 'backdrop-blur-md', 'border-b', 'border-[#E5E5E5]', 'shadow-sm', 'py-4');
+        navbar.classList.add('bg-white/95', 'backdrop-blur-md', 'border-b', 'border-black', 'shadow-sm', 'py-4');
         navbar.classList.remove('py-6', 'text-white');
-        navbar.classList.add('text-brand-black');
+        navbar.classList.add('text-black');
         
         if (navLogo) navLogo.src = '/assets/pstylst logo black.png';
-        if (navMobileBtn) navMobileBtn.classList.replace('text-white', 'text-brand-black');
-        if (navEyebrow) navEyebrow.classList.replace('border-white/20', 'border-brand-border');
+        if (navMobileBtn) navMobileBtn.classList.replace('text-white', 'text-black');
+        if (navEyebrow) navEyebrow.classList.replace('border-white/20', 'border-black');
         if (navCta) {
-            navCta.classList.add('border-brand-black', 'hover:bg-brand-black', 'hover:text-white', 'text-brand-black');
-            navCta.classList.remove('border-white', 'hover:bg-white', 'hover:text-brand-black', 'text-white');
+            navCta.classList.add('border-black', 'hover:bg-brand-honeysuckle', 'hover:text-white', 'text-black');
+            navCta.classList.remove('border-white', 'hover:bg-white', 'hover:text-black', 'text-white');
         }
     } else {
-        navbar.classList.remove('bg-[#FDFBF7]/95', 'backdrop-blur-md', 'border-b', 'border-[#E5E5E5]', 'shadow-sm', 'py-4', 'text-brand-black');
+        navbar.classList.remove('bg-white/95', 'backdrop-blur-md', 'border-b', 'border-black', 'shadow-sm', 'py-4', 'text-black');
         navbar.classList.add('py-6', 'text-white');
         
         if (navLogo) navLogo.src = '/assets/pstylst logo white.png';
-        if (navMobileBtn) navMobileBtn.classList.replace('text-brand-black', 'text-white');
-        if (navEyebrow) navEyebrow.classList.replace('border-brand-border', 'border-white/20');
+        if (navMobileBtn) navMobileBtn.classList.replace('text-black', 'text-white');
+        if (navEyebrow) navEyebrow.classList.replace('border-black', 'border-white/20');
         if (navCta) {
-            navCta.classList.remove('border-brand-black', 'hover:bg-brand-black', 'hover:text-white', 'text-brand-black');
-            navCta.classList.add('border-white', 'hover:bg-white', 'hover:text-brand-black', 'text-white');
+            navCta.classList.remove('border-black', 'hover:bg-brand-honeysuckle', 'hover:text-white', 'text-black');
+            navCta.classList.add('border-white', 'hover:bg-white', 'hover:text-black', 'text-white');
         }
     }
 });
